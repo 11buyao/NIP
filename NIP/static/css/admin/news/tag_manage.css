@@ -1,0 +1,32 @@
+thead {
+    background-color: #f2f2f2;
+}
+
+#btn-del, #btn-add, #btn-select, #btn-clear {
+    background-color: #009688;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+.fa-sort-asc:before {
+    width: 5px;
+    height: 5px;
+    display: inline;
+    cursor: pointer;
+    position: relative;
+    left: 8px;
+    padding: 0;
+}
+
+.check {
+    cursor: pointer;
+}
+
+.btn-del, .btn-edit {
+    margin-right: 5px;
+    border-radius: 2px;
+}
+
+.btn-edit i, .btn-del i {
+    margin-right: 4px;
+}

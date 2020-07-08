@@ -1,0 +1,241 @@
+.btn-bofang {
+    float: right;
+    position: relative;
+    bottom: 30px;
+    margin-right: 20px;
+    border: none;
+}
+
+.sound-select {
+    padding-right: 30px;
+    cursor: pointer;
+    height: 38px;
+    padding-left: 15px;
+    border-radius: 2px;
+    border: 1px solid #e6e6e6;
+    margin-top: 10px;
+}
+
+.sound-input {
+    display: block;
+    height: 38px;
+    padding-left: 15px;
+    border-radius: 2px;
+    border: 1px solid #e6e6e6;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+article .content {
+    width: 80%;
+    padding-left: 50px;
+}
+
+.content .article-header, .article-content {
+    background-color: white;
+}
+
+#respond {
+    margin-top: 50px;
+}
+
+/*==============comment start==================*/
+#postcomments {
+    /*padding-left: 20px;*/
+    margin-bottom: 50px;
+    border-bottom: 1px solid #999;
+
+}
+
+.comment-header, .commentlist {
+    background-color: white;
+
+}
+
+#postcomments .comment-header h3:before {
+    border-left: 5px solid #ec7259;
+    content: '';
+    padding-right: 20px;
+}
+
+#postcomments .comment-header h3 {
+    margin-left: 20px;
+    margin-top: 30px;
+    padding: 20px 0;
+
+}
+
+#postcomments .comment-header h3 span {
+    font-size: 14px;
+    margin-left: 6px;
+    font-weight: normal;
+}
+
+#postcomments .comment-info .comment-user {
+    float: left;
+    padding-left: 10px;
+    padding-top: 16px;
+}
+
+#comment_list {
+    padding-left: 20px;
+}
+
+.comment-item {
+    /*border-bottom: 1px solid #AAA99B;*/
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+hr {
+    margin-right: 20px;
+    margin-left: 40px;
+    color: #AAA99B;
+}
+
+#postcomments .comment-info .comment-pub-time {
+    font-size: 12px;
+    padding-top: 38px;
+    position: absolute;
+    right: 660px;
+    color: #969696;
+}
+
+#postcomments .comment-item .comment-info img {
+    border-radius: 50%;
+}
+
+#postcomments .comment-content, .child-comment-reply {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 10px;
+    padding-left: 45px;
+    border: none;
+
+}
+
+.comment-reply, .child-reply {
+    margin-top: 20px;
+    color: #b0b0b0;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.comment-reply {
+    padding-left: 45px;
+}
+
+.comment-reply .zan {
+    margin-right: 20px;
+
+}
+
+.comment-reply .zan:hover {
+    color: #ec7259;
+}
+
+.comment-reply .reply:hover {
+    color: rgba(57, 62, 62, 0.85);
+}
+
+.comment-reply .reply_form textarea, .child-reply_form textarea {
+    width: 95%;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding: 12px 16px;
+    height: 90px;
+    font-size: 13px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #fafafa;
+    resize: none;
+    display: inline-block;
+    vertical-align: top;
+    outline-style: none;
+    overflow: auto;
+}
+
+.comment-reply .reply_form .reply_btn, .child-reply_form .reply_btn {
+    float: right;
+    font-size: 14px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-right: 110px;
+    border: 1px solid #ec7259;
+    /*position: relative;*/
+    color: #fff;
+    background-color: #ec7259;
+    padding: 4px 12px;
+}
+
+.comment-reply .reply_form .reply_cancel, .child-reply_form .reply_cancel {
+    float: right;
+    position: relative;
+    font-size: 14px;
+    border-radius: 50px;
+    left: 130px;
+    padding: 4px 12px;
+    background-color: #fff;
+    color: #999;
+    border: 1px solid #999;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/*================子评论样式====================*/
+.child_comment_text {
+    padding-left: 40px;
+}
+
+.child_comment_text .child-pub-time {
+    font-size: 12px;
+    padding-top: 38px;
+    position: absolute;
+    right: 617px;
+    color: #969696;
+}
+
+/*==============comment end==================*/
+/*============== 进度条样式 ==================*/
+.progress_main label {
+    margin: 10px 0;
+}
+
+.progress_bg {
+    height: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #f2f2f2;
+}
+
+.progress_bar {
+    background: #5FB878;
+    width: 0;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.progress_btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    position: relative;
+    background: #fff;
+    left: 0px;
+    margin-left: -10px;
+    top: -15px;
+    cursor: pointer;
+    border: 1px #ddd solid;
+    box-sizing: border-box;
+}
+
+.progress_btn:hover {
+    border-color: #F7B824;
+}
+
+.text {
+    position: relative;
+    top: -10px;
+}

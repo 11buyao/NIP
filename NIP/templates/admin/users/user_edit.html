@@ -1,0 +1,92 @@
+{% extends 'admin/base/base.html' %}
+
+
+{% block title %}
+    用户编辑页
+{% endblock %}
+
+{% block content_header %}
+    用户编辑
+{% endblock %}
+
+{% block header_option %}
+    用户编辑
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="../../../static/css/admin/users/user_edit.css">
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12 col-xs-12 col-sm-12">
+            <div class="box box-primary">
+                <div class="box-body">
+
+                    <div><span>用户名：</span><strong style="color: #ff851b;">{{ user_instance.username }}</strong></div>
+
+                    <div><span class="label-title">是否能登录后台？(is_staff)</span></div>
+                    <span class="label-form-switch is_on">
+                        <input type="radio" name="login_admin" class="login_admin" value="{{ user_instance.is_staff }}">
+                        <em>否</em>
+                        <i></i>
+                    </span>
+                    <div><span class="label-title">是否是超级管理员？(is_superuser)</span></div>
+                    <span class="label-form-switch is_on">
+                        <input type="radio" name="is_superuser" class="login_admin"
+                               value="{{ user_instance.is_superuser }}">
+                        <em>否</em>
+                        <i></i>
+                    </span>
+
+                    <div><span class="label-title">是否激活？(is_active)</span></div>
+                    <span class="label-form-switch is_on">
+                        <input type="radio" name="is_active" class="login_admin"
+                               value="{{ user_instance.is_active }}">
+                        <em>否</em>
+                        <i></i>
+                    </span>
+
+                    <div><span class="label-title">是否为VIP用户？(is_VIP)</span></div>
+                    <span class="label-form-switch is_on">
+                        <input type="radio" name="is_VIP" class="login_admin"
+                               value="{{ user_instance.is_VIP }}">
+                        <em>否</em>
+                        <i></i>
+                    </span>
+                    <div class="form-group" style="margin-top: 15px">
+                        <div><label for="add-group">所属组</label></div>
+                        {% for one_group in groups %}
+                            {% if one_group in user_instance.groups.all %}
+                                <label class="checkbox-inline">
+                                    <i class="fa fa-check-square check"
+                                       data-group-id="{{ one_group.id }}">  {{ one_group.name }}</i>
+                                </label>
+                            {% else %}
+                                <label class="checkbox-inline">
+                                    <i class="fa fa-square-o check"
+                                       data-group-id="{{ one_group.id }}">  {{ one_group.name }}</i>
+                                </label>
+                            {% endif %}
+
+                        {% endfor %}
+
+
+                    </div>
+
+                </div>
+                <div class="box-footer">
+                    <button class="btn btn-primary pull-right" id="btn-edit-user"
+                            data-user-id="{{ user_instance.id }}">更新用户
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/admin/users/user_manage.js' %}"></script>
+
+{% endblock %}

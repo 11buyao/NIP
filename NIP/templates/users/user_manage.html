@@ -1,0 +1,87 @@
+{% extends 'base/base.html' %}
+{% block title %}新闻资讯-设置{% endblock %}
+{% block link %}
+    <link rel="stylesheet" href="../../static/css/users/user_set.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1698819_zntszmbp7o9.css">
+{% endblock %}
+{% load data_filter %}
+{% block main %}
+    <table>
+        <tbody class="base">
+        <tr>
+            <td class="top-line">
+                <div class="avatar">
+                    <img src="{{ user.avatar_url }}" alt="">
+                </div>
+            </td>
+            <td class="top-line">
+                <a class="btn btn-hollow">
+                    <input type="file" class="hide"/>
+                    更改头像
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="setting-title">
+                昵称
+            </td>
+            <td class="top-line">
+                <input type="text" placeholder="请输入昵称" name="username" value="{{ user.username }}">
+            </td>
+        </tr>
+        <tr>
+            <td class="setting-title">
+                手机
+            </td>
+            <td class="setted">
+                <div>{{ user.mobile|mobile_filter }}</div>
+                <i class="fa fa-check"></i>
+                <span>已验证</span>
+                <a class="cancel-bind" data-toggle="modal" data-target="#myModal" style="display: none">
+                    更换绑定的手机号
+                </a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-success settings-save">保存</button>
+    <!-- 按钮触发模态框 -->
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        绑定手机
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-prepend restyle">
+                        <div class="input-prepend">
+                            <div class="overseas">
+                                <input type="text" placeholder="手机号" name="mobile">
+                                <i class="fa fa-mobile mobile"></i>
+                            </div>
+                            <div class="input-prepend">
+                                <input type="text" name="security" placeholder="验证码">
+                                <i class="iconfont icon-mn_dunpai_fill"></i>
+                                <a class="btn-in-resend">发送验证码</a>
+                            </div>
+                        </div>
+                        <a class="sign-in-btn">确认</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block script %}
+    <script src="../../static/js/users/user_set.js"></script>
+{% endblock %}

@@ -1,0 +1,99 @@
+label {
+    margin-right: 10px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+#btn-select {
+    width: 57px;
+    height: 34px;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+#btn-del, #btn-add, #btn-select, #btn-clear {
+    background-color: #009688;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+.fa-sort-asc:before {
+    width: 5px;
+    height: 5px;
+    display: inline;
+    cursor: pointer;
+    position: relative;
+    left: 8px;
+    padding: 0;
+}
+
+.check {
+    cursor: pointer;
+}
+
+.btn-del, .btn-edit {
+    margin-right: 5px;
+    border-radius: 2px;
+}
+
+.btn-edit i, .btn-del i {
+    margin-right: 4px;
+}
+
+.paginator li {
+    list-style: none;
+
+    display: inline;
+    padding: 0 10px;
+}
+
+.paginator li a {
+    color: black;
+}
+
+.paginator .active a {
+    text-decoration: none;
+    padding: 6px 12px;
+    background-color: #009688;
+    color: white;
+    border-radius: 1px;
+    border-color: #ddd;
+}
+
+#li-move {
+    color: #999;
+    font-size: 14px;
+}
+
+.paginator #input-move {
+    width: 40px;
+    border: 1px solid #D2D2D2 !important;
+    margin: 0 10px;
+    padding: 0 3px;
+    text-align: center;
+    border-radius: 2px;
+    box-sizing: border-box;
+    height: 26px;
+    line-height: 26px;
+    color: black;
+}
+
+#btn-move {
+    background-color: white;
+    border-radius: 2px;
+    padding: 0 10px;
+    border: 1px solid #e2e2e2;
+    height: 26px;
+    color: black;
+    line-height: 26px;
+    margin-left: 10px;
+    box-sizing: border-box;
+}

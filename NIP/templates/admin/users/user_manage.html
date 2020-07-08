@@ -1,0 +1,196 @@
+{% extends 'admin/base/base.html' %}
+
+
+{% block title %}
+    用户管理页
+{% endblock %}
+
+{% block content_header %}
+    用户管理
+{% endblock %}
+
+{% block header_option_desc %}
+    用户管理
+{% endblock %}
+{% block link %}
+    <link rel="stylesheet" href="../../../static/css/admin/news/news_manage.css">
+    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1698819_tsbgmmd6jzq.css">
+{% endblock %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 col-xs-12 col-sm-12">
+            <div class="box">
+                <div class="box-header">
+                    <form action="" class="form-inline">
+                        <div class="form-group ml20 mt20">
+                            <label for="username">用户名 </label>
+                            {% if username %}
+                                <input type="text" class="form-control" placeholder="请输入标题" id="username"
+                                       name="username"
+                                       value="{{ username }}">
+                            {% else %}
+                                <input type="text" class="form-control" placeholder="请输入标题" id="username"
+                                       name="username">
+                            {% endif %}
+
+                        </div>
+                        <div class="form-group ml20 mt20">
+                            <label for="author">手机号 </label>
+                            {% if mobile %}
+                                <input type="text" class="form-control" placeholder="请输入手机号" id="mobile"
+                                       name="mobile"
+                                       value="{{ mobile }}">
+                            {% else %}
+                                <input type="text" class="form-control" placeholder="请输入手机号" id="mobile"
+                                       name="mobile">
+                            {% endif %}
+                        </div>
+                        <div class="form-group ml20 mt20">
+                            <label for="group">所属组 </label>
+                            <select class="form-control" id="group" name="group_id">
+                                <option value="0">--请选择标签--</option>
+                                {% for one_group in groups %}
+
+                                    {% if group_id and  one_group.id == group_id %}
+
+                                        <option value="{{ one_group.id }}"
+                                                selected="selected">{{ one_group.name }}</option>
+                                    {% else %}
+                                        <option value="{{ one_group.id }}">{{ one_group.name }}</option>
+                                    {% endif %}
+
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group ml20 mt20">
+                            <button class="btn btn-primary" id="btn-select"><i class="iconfont icon-sousuo"></i>
+                            </button>
+                            <button class="btn btn-info" id="btn-clear">清除</button>
+                        </div>
+                    </form>
+                    <hr>
+                    <button class="btn btn-primary pull-left" id="btn-del">删除</button>
+                    <a href="{% url 'users:login' %}" class="btn btn-primary pull-left" id="btn-add">添加</a>
+                </div>
+                <div class="box-body">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th><i id="check" class="check fa fa-square-o"></i></th>
+                            <th>编号</th>
+                            <th>用户名</th>
+                            <th>手机号</th>
+                            <th>是否能登录后台</th>
+                            <th>是否是超级管理员</th>
+                            <th>是否是VIP用户</th>
+                            <th>所属组</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        {% for one_user in users %}
+                            <tr data-id="{{ one_user.id }}" data-name="{{ one_user.username }}">
+                                <td><i class="check fa fa-square-o"></i></td>
+                                <td>{{ one_user.id }}</td>
+                                <td>{{ one_user.username }}</td>
+                                <td>{{ one_user.mobile }}</td>
+                                {% if one_user.is_staff %}
+                                    <td>是</td>
+                                {% else %}
+                                    <td>否</td>
+                                {% endif %}
+
+                                {% if one_user.is_superuser %}
+                                    <td>是</td>
+                                {% else %}
+                                    <td>否</td>
+                                {% endif %}
+                                {% if one_user.is_VIP %}
+                                    <td>是</td>
+                                {% else %}
+                                    <td>否</td>
+                                {% endif %}
+                                <td>{{ one_user.get_groups_name|default:'未分组' }}</td>
+
+                                <td>
+                                    <a href="{% url 'admin:user_edit' one_user.id %}"
+                                       class="btn btn-sm btn-info btn-edit"><i class="fa fa-pencil"></i> 编辑
+                                    </a>
+                                    <button class="btn btn-sm btn-danger  btn-del"><i class="fa fa-trash"></i> 删除
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="box-footer">
+                    {#                    <span class="">第{{ current_page_num }}页/总共{{ total_page_num }}页</span>#}
+                    <nav class="">
+                        <!-- 分页 -->
+                        <ul class="paginator">
+                            <!-- 上一页 -->
+                            {% if users.has_previous %}
+                                <li><a href="?page={{ users.previous_page_number }}&{{ other_params }}"><i
+                                        class="fa fa-angle-left"></i></a></li>
+                            {% else %}
+                                <li class="disabled"><a href="javascript:void(0);"><i class="fa fa-angle-left"></i></a>
+                                </li>
+                            {% endif %}
+
+                            {% if left_has_more_page %}
+                                <li><a href="?page=1&{{ other_params }}">1</a></li>
+                                <li><a href="javascript:void(0);">...</a></li>
+                            {% endif %}
+                            <!-- 左边的页码 -->
+                            {% for left_page in left_pages %}
+                                <li><a href="?page={{ left_page }}&{{ other_params }}">{{ left_page }}</a>
+                                </li>
+                            {% endfor %}
+
+                            <!-- 当前页面 -->
+                            {% if current_page_num %}
+                                <li class="active"><a
+                                        href="?page={{ current_page_num }}&{{ other_params }}">{{ current_page_num }}</a>
+                                </li>
+                            {% endif %}
+                            <!-- 右边的页面 -->
+                            {% for right_page in right_pages %}
+                                <li><a href="?page={{ right_page }}&{{ other_params }}">{{ right_page }}</a></li>
+                            {% endfor %}
+
+                            {% if right_has_more_page %}
+                                <li><a href="javascript:void(0);">...</a></li>
+                                <li><a href="?page={{ total_page_num }}&{{ other_params }}">{{ total_page_num }}</a>
+                                </li>
+                            {% endif %}
+
+                            <!-- 下一页 -->
+                            {% if users.has_next %}
+                                <li><a href="?page={{ users.next_page_number }}&{{ other_params }}"><i
+                                        class="fa fa-angle-right"></i></a></li>
+                            {% else %}
+                                <li class="disabled"><a href="javascript:void(0);"><i class="fa fa-angle-right"></i></a>
+                                </li>
+                            {% endif %}
+                            <li id="li-move">到第<input id="input-move" value="{{ current_page_num }}"
+                                                      data-other_params="{{ other_params }}"
+                                                      name="move"/>页
+                                <button id="btn-move" class="btn">确定</button>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/admin/users/user_manage.js' %}"></script>
+{% endblock %}

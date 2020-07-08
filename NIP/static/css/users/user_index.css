@@ -1,0 +1,229 @@
+.container {
+    margin-left: 20%;
+}
+
+.main {
+    width: 1000px;
+}
+
+a {
+    color: #333;
+}
+
+.main-top {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 5px 5px 5px 10px;
+}
+
+.main-top .avatar {
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-left: -2px;
+    vertical-align: middle;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+
+.main-top .title {
+    padding: 5px 0 0 27px;
+}
+
+.main-top .title .name {
+    display: inline;
+    font-size: 21px;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+.main-top .info {
+    margin-top: 5px;
+    padding-left: 100px;
+    font-size: 14px;
+}
+
+.main-top .info ul li {
+    display: inline-block;
+}
+
+.main-top .info ul li .meta-block {
+    font-size: 12px;
+    margin: 0 7px 6px 0;
+    padding: 0 7px 0 0;
+    border-right: 1px solid #f0f0f0;
+}
+
+.main-top .info ul li .meta-block a {
+    color: #969696;
+}
+
+.main-top .info ul li .meta-block p {
+    margin-left: 8px;
+    font-size: 15px;
+    color: #333;
+}
+
+/*================== 标签栏 =========================*/
+.outer_container .trigger-menu {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0;
+    list-style: none;
+}
+
+.outer_container .trigger-menu li.active {
+    border-bottom: 2px solid #646464;
+}
+
+.outer_container .trigger-menu li {
+    position: relative;
+    display: inline-block;
+    padding: 8px 0;
+    margin-bottom: -1px;
+}
+
+.trigger-menu .active a, .trigger-menu a:hover {
+    color: #646464;
+}
+
+.trigger-menu a {
+    padding: 13px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #969696;
+    line-height: 25px;
+}
+
+.trigger-menu i {
+    margin-right: 5px;
+    font-size: 17px;
+}
+
+/*================== 列表显示 =========================*/
+
+#list_container {
+    background-color: #fff;
+    padding-left: 16px;
+}
+
+#list_container .note-list {
+    margin: 0;
+    padding-bottom: 60px;
+    list-style: none;
+}
+
+.note-list li {
+    position: relative;
+    width: 100%;
+    margin: 0 0 15px;
+    padding: 15px 2px 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+    word-wrap: break-word;
+}
+
+.note-list .author {
+    margin-bottom: 14px;
+    font-size: 13px;
+}
+
+.note-list .author .avatar, .note-list .author .info {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.note-list .author .avatar {
+    margin: 0 5px 0 0;
+    width: 24px;
+    height: 24px;
+}
+
+.info .nickname {
+    vertical-align: middle;
+}
+
+.info span {
+    display: inline-block;
+    padding-left: 3px;
+    color: #969696;
+    vertical-align: middle;
+}
+
+/*===================评论内容============================*/
+.contents .comment {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-left: 10px;
+}
+
+.note-list blockquote {
+    color: #969696;
+    border-left: 3px solid #d9d9d9;
+    padding: 10px 20px;
+    margin: 0 0 20px 15px;
+    font-size: 17px;
+}
+
+.note-list blockquote .title {
+    color: #969696;
+    margin: 0 0 4px;
+    font-size: 15px;
+}
+
+.note-list blockquote .abstract {
+    margin: 0 0 4px;
+    font-size: 13px;
+    line-height: 24px;
+    color: #999;
+}
+
+.note-list .meta {
+    padding-right: 0 !important;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.note-list .origin-author {
+    display: inline;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #969696;
+}
+
+.note-list .origin-author a {
+    margin-right: 5px;
+}
+
+.note-list .origin-author span a {
+    margin-left: 2px;
+}
+
+.note-list .origin-author span a:hover {
+    color: #000;
+}
+
+.note-list .meta a {
+    margin: 0 10px;
+    color: #b4b4b4;
+}
+
+.note-list .meta a i {
+    margin-right: 5px;
+}
+
+.iconfont, .glyphicon {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400 !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+.iconfont {
+    margin-right: 6px;
+}

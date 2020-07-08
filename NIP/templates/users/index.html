@@ -1,0 +1,111 @@
+{% extends 'base/base.html' %}
+{% block title %}新闻资讯-个人主页{% endblock %}
+{% block link %}
+    <link rel="stylesheet" href="../../static/css/users/user_index.css">
+    <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_1698819_exvvpdti8m9.css">
+{% endblock %}
+{% load data_filter %}
+{% block main %}
+    <div class="container">
+        <div class="main">
+            <div class="main-top">
+                <a class="avatar" href="{% url 'users:user_index' %}">
+                    <img src="{{ user.avatar_url }}" alt="">
+                </a>
+                <div class="title">
+                    <a class="name" href="{% url 'users:user_index' %}">{{ user.username }}</a>
+                </div>
+                <div class="info">
+                    <ul>
+                        <li>
+                            <div class="meta-block">
+                                <a href="#">
+                                    <p>{{ article_count }}</p>
+                                    文章
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="meta-block">
+                                <a href="#">
+                                    <p>{{ thumb_count }}</p>
+                                    点赞
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="outer_container">
+                <ul class="trigger-menu">
+                    <li class="active" data-id="0"><a href=""><i class="fa fa-bell"></i>动态</a></li>
+{#                    <li data-id="1"><a href=""><i class="fa fa-comments"></i>最新评论</a></li>#}
+                    {#                    <li data-id="2"><a href=""><i class="fa fa-book"></i>文章</a></li>#}
+                </ul>
+                <div id="list_container">
+                    <ul class="note-list">
+                        {% for comment in comments %}
+                            <li>
+                                <div class="contents">
+                                    <div class="author">
+                                        <a class="avatar" href="{% url 'users:user_index' %}">
+                                            <img src="{{ user.avatar_url }}" alt="">
+                                        </a>
+                                        <div class="info">
+                                            <a class="nickname"
+                                               href="{% url 'users:user_index' %}">{{ user.username }}</a>
+                                            <span class="comment-note" data-datetime="{{ comment.update_time }}">
+                                            {% if comment.content %}
+                                                发表
+                                            {% else %}
+                                                赞
+                                            {% endif %}
+                                                了评论
+                                            {{ comment.update_time|user_time_filter }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p class="comment">
+                                        {% if comment.content %}
+                                            {{ comment.content }}
+                                        {% else %}
+                                            {{ comment.comments.content }}
+                                        {% endif %}
+                                    </p>
+                                    <blockquote>
+                                        {% if comment.content %}
+                                            <a class="title"
+                                               href="/news/{{ comment.news.id }}">{{ comment.news.title }}</a>
+                                            <p class="abstract">{{ comment.news.digest }}</p>
+                                            <div class="meta">
+                                                <p class="origin-author">{{ comment.news.author.username }}</p>
+                                                <a href="/news/{{ comment.news.id }}"><i
+                                                        class="glyphicon glyphicon-eye-open"></i>{{ comment.news.clicks }}
+                                                </a>
+                                                <a href="/news/{{ comment.news.id }}"><i
+                                                        class="glyphicon glyphicon-comment"></i>{{ comment.news_comment_count }}
+                                                </a>
+                                                <span><i class="iconfont icon-zan"
+                                                         style="font-size: 12px"></i>{{ comment.news_thumb_count }}</span>
+                                            </div>
+                                        {% else %}
+                                            <div class="origin-author">
+                                                <a href="#">{{ comment.comments.author.username }}</a>
+                                                <span>评论自<a
+                                                        href="/news/{{ comment.comments.news.id }}">{{ comment.comments.news.title }}</a></span>
+                                            </div>
+                                        {% endif %}
+
+                                    </blockquote>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script src="../../static/js/users/index.js"></script>
+{% endblock %}

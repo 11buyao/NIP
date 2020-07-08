@@ -1,0 +1,25 @@
+#pageBar {
+    margin-bottom: 50px;
+}
+
+#pageBar a {
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: rgb(241, 239, 240);
+    color: black;
+    border-radius: 1px;
+    margin: 0 5px;
+}
+
+#pageBar .sel {
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #65CFA8;
+    color: white;
+    border-radius: 1px;
+    margin: 0 10px;
+}
+
+.highlighted {
+    color: red;
+}

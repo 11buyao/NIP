@@ -1,0 +1,99 @@
+/*span {*/
+/*font-weight: 700;*/
+/*margin-top: 30px;*/
+/*}*/
+.label-title {
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.form-check-label {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.428;
+}
+
+.form-check-inline {
+    display: inline;
+    margin-right: 10px;
+}
+
+.label-form-switch {
+    position: relative;
+    height: 22px;
+    line-height: 22px;
+    min-width: 35px;
+    padding: 0 5px;
+    margin-top: 8px;
+    border: 1px solid #d2d2d2;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #fff;
+    -webkit-transition: .1s linear;
+    -o-user-select: none;
+    -moz-user-select: none; /*火狐 firefox*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10+*/
+    -khtml-user-select: none; /*早期的浏览器*/
+    user-select: none;
+    transition: .1s linear;
+}
+
+.label-form-switch em {
+    position: relative;
+    top: 0;
+    width: 25px;
+    margin-left: 21px;
+    padding: 0 !important;
+    text-align: center !important;
+    color: #999 !important;
+    font-style: normal !important;
+    font-size: 12px;
+}
+
+.label-form-switch input {
+    position: absolute;
+    left: 7px;
+}
+
+.label-form-switch i {
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 16px;
+    height: 16px;
+    border-radius: 20px;
+    background-color: #d2d2d2;
+    -webkit-transition: .1s linear;
+    transition: .1s linear;
+}
+
+.label-form-onswitch {
+    border-color: #5FB878;
+    background-color: #5FB878;
+}
+
+.label-form-onswitch em {
+    margin-left: 5px;
+    margin-right: 21px;
+    color: #fff !important;
+}
+
+.label-form-onswitch i, .label-form-onswitch input {
+    left: 100%;
+    margin-left: -21px;
+    background-color: #fff;
+}
+
+.check {
+    -o-user-select: none;
+    -moz-user-select: none; /*火狐 firefox*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10+*/
+    -khtml-user-select: none; /*早期的浏览器*/
+    user-select: none;
+}
+
+#btn-edit-user {
+    border-radius: 2px;
+}

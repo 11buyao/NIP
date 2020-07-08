@@ -1,0 +1,79 @@
+/* ========= login start ============ */
+.login-box {
+    float: right;
+}
+
+.login-box .py-user {
+    font-size: 30px;
+}
+
+.login-box span {
+    vertical-align: 4px;
+    position: relative;
+    top: 5px;
+}
+
+.login-box span a {
+    font-size: 16px;
+    color: #777777;
+
+}
+
+.login-box .login:hover, .reg:hover {
+    text-shadow: 1.5px 1.5px 3px rgba(255, 255, 255, 0.88);
+}
+
+.login-box .author {
+    float: right;
+    position: relative;
+    cursor: pointer;
+}
+
+.login-box .author img {
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+    border-radius: 50%;
+}
+
+.login-box .author .author-menu {
+    display: none;
+    width: 120px;
+    position: absolute;
+    top: 70px;
+    left: -15px;
+    background: #fff;
+    text-align: center;
+    line-height: 45px;
+    box-shadow: 0 1px 2px #ccc;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.login-box .author .author-menu li a {
+    display: block;
+    color: #777777;
+}
+
+.login-box .author:hover .author-menu {
+    display: block;
+}
+
+.login-box .author .author-menu li:hover {
+    background: #e4e4e4;
+}
+
+.login-box .author .author-menu::after {
+    content: "";
+    border: 12px solid transparent;
+    border-bottom-color: #fff;
+    position: absolute;
+    top: -24px;
+    left: 50px;
+}
+
+/* ========= login end ============ */
+/* ================= header end ================= */
+.caret {
+    margin-bottom: 4px;
+}

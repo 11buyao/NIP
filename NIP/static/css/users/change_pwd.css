@@ -1,0 +1,22 @@
+#modal_btn {
+    width: 440px;
+    margin: 20px auto;
+}
+
+.submit-btn, .cancel-btn {
+    display: inline;
+
+    padding: 10px 16px;
+    position: relative;
+}
+
+.submit-btn {
+    float: left;
+    bottom: 30px;
+    margin-left: 180px;
+}
+
+.cancel-btn {
+    top: 30px;
+    margin-right: 180px;
+}
